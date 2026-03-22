@@ -37,7 +37,7 @@ function M.setup_inlay_hints(opts)
     group = augroup,
     callback = function(args)
       local client = vim.lsp.get_client_by_id(args.data.client_id)
-      if client and client.name == "kotlin_ls" then
+      if client and client.name == "kotlin_lsp" then
         local bufnr = args.buf
         
         -- Check if the client supports inlay hints
