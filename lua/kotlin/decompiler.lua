@@ -68,6 +68,10 @@ function M.open_classfile(fname)
   vim.wait(kotlin.settings.uri_timeout_ms, function()
     return content ~= nil
   end)
+
+  if content ~= nil then
+    vim.lsp.buf_attach_client(buf, client.id)
+  end
 end
 
 return M
